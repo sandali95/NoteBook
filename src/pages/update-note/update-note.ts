@@ -15,17 +15,19 @@ export class UpdateNotePage {
   formGroup:FormGroup;
   note:Note
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , private noteService:NoteServiceProvider) {
     this.note = this.navParams.get('note');
     this.formGroup = new FormGroup({
-      title : new FormControl(),
-      content : new FormControl(),
-      date : new FormControl()
+      title : new FormControl(this.note.title),
+      content : new FormControl(this.note.content),
+      date : new FormControl(this.note.date)
     });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UpdateNotePage');
+  updateNote(value){
+    value.createDate = Date.now();
+    this.noteService.updateNote(value);
+    this.navCtrl.pop();
   }
 
 }

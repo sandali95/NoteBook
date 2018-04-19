@@ -45,7 +45,8 @@ export class NoteServiceProvider {
     );
   }
 
-  updateNote(createDate:number){
+  updateNote(note:Note){
+    
     
   }
 
