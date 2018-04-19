@@ -30,6 +30,7 @@ export class UpdateNotePage {
    this.noteService.deleteNote(this.note.createDate);
    this.noteService.saveNote(value);
    this.navCtrl.pop();
+   this.navCtrl.push(ViewNotePage,{note:value});
   }
 
 }
