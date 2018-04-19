@@ -11,13 +11,15 @@ import { HomePage } from '../pages/home/home';
 import { AddNotePage } from '../pages/add-note/add-note';
 import { NoteServiceProvider } from '../providers/note-service/note-service';
 import { ViewNotePage } from '../pages/view-note/view-note';
+import { UpdateNotePage } from '../pages/update-note/update-note';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AddNotePage,
-    ViewNotePage
+    ViewNotePage,
+    UpdateNotePage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { ViewNotePage } from '../pages/view-note/view-note';
     MyApp,
     HomePage,
     AddNotePage,
-    ViewNotePage
+    ViewNotePage,
+    UpdateNotePage
   ],
   providers: [
     StatusBar,

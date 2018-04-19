@@ -18,6 +18,7 @@
     </ion-card-content>
 
     <ion-footer>
+        <button ion-button color="primary" block (click)="updateNote(note.createDate)" >Update</button>
       <button ion-button color="danger" block (click)="deleteNote(note.createDate)">Delete</button>
     </ion-footer>
   </ion-card>

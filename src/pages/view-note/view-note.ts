@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NoteServiceProvider } from '../../providers/note-service/note-service';
 import { Note } from '../../models/note.model';
+import { UpdateNotePage } from '../update-note/update-note';
 
 
 @IonicPage()
@@ -19,6 +20,10 @@ export class ViewNotePage {
   deleteNote(createDate : number){
     this.noteService.deleteNote(createDate);
     this.navCtrl.pop();
+  }
+
+  updateNote(createDate:number){
+    this.navCtrl.push(UpdateNotePage,{note : this.note});
   }
 
   

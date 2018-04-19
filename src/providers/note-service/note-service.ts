@@ -45,4 +45,8 @@ export class NoteServiceProvider {
     );
   }
 
+  updateNote(createDate:number){
+    
+  }
+
 }
