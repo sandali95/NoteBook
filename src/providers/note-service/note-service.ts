@@ -45,9 +45,14 @@ export class NoteServiceProvider {
     );
   }
 
-  updateNote(note:Note){
-    
-    
+  updateNote(updatedNote:Note){
+    this.getNote(updatedNote.createDate).then((n)=>{
+      this.note = n;
+      this.deleteNote(n.createDate);
+      this.saveNote(updatedNote);
+    });
+    console.log(this.notes);
+    return updatedNote;
   }
 
 }

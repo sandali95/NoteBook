@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NoteServiceProvider } from '../../providers/note-service/note-service';
 import { Note } from '../../models/note.model';
 import { FormGroup, Validator , FormControl } from '@angular/forms';
+import { ViewNotePage } from '../view-note/view-note';
+import { HomePage } from '../home/home';
 
 
 @IonicPage()
@@ -25,9 +27,9 @@ export class UpdateNotePage {
   }
 
   updateNote(value){
-    value.createDate = Date.now();
-    this.noteService.updateNote(value);
-    this.navCtrl.pop();
+   this.noteService.deleteNote(this.note.createDate);
+   this.noteService.saveNote(value);
+   this.navCtrl.pop();
   }
 
 }
